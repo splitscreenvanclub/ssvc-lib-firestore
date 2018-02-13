@@ -1,4 +1,4 @@
-package uk.org.ssvc.email.integration.firestore.v1;
+package uk.org.ssvc.firestore.integration.repository.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
@@ -13,7 +13,7 @@ import uk.org.ssvc.core.domain.exception.SsvcServerException;
 import uk.org.ssvc.core.domain.model.member.Member;
 import uk.org.ssvc.core.domain.model.member.search.MemberFilterCriteria;
 import uk.org.ssvc.core.domain.repository.MemberRepository;
-import uk.org.ssvc.email.integration.firestore.v1.document.MemberDocument;
+import uk.org.ssvc.firestore.integration.repository.v1.document.MemberDocument;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

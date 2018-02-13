@@ -1,4 +1,4 @@
-package uk.org.ssvc.email.integration.firestore.v1.document;
+package uk.org.ssvc.firestore.integration.repository.v1.document;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

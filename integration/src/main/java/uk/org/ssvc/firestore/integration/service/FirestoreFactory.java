@@ -1,4 +1,4 @@
-package uk.org.ssvc.email.integration.service;
+package uk.org.ssvc.firestore.integration.service;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.Firestore;
