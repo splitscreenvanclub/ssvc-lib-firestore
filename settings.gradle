@@ -1,0 +1,8 @@
+rootProject.name = 'ssvc-lib-firestore'
+include 'integration'
+
+rootProject.children.each{ adjustName(it) }
+
+def adjustName(module) {
+    module.name = 'ssvc-firestore-' + module.name
+}
