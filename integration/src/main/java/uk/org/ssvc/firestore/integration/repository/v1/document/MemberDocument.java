@@ -10,11 +10,12 @@ import uk.org.ssvc.core.domain.model.member.RenewalDate;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.util.Set;
+import java.util.List;
 
 import static java.time.ZoneOffset.UTC;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 @AllArgsConstructor
@@ -28,7 +29,7 @@ public class MemberDocument {
     private String lastName;
     private AddressDocument address;
     private ContactDetailsDocument contactDetails;
-    private Set<MemberAssociateDocument> associates;
+    private List<MemberAssociateDocument> associates;
     private long expiryDate;
 
     public MemberDocument(Member member) {
@@ -38,7 +39,7 @@ public class MemberDocument {
         contactDetails = new ContactDetailsDocument(member.getContactDetails());
         associates = member.getAssociates().stream()
             .map(MemberAssociateDocument::new)
-            .collect(toSet());
+            .collect(toList());
         expiryDate = member.getRenewalDate().getExpiryDate().atStartOfDay(UTC).toEpochSecond();
     }
 
