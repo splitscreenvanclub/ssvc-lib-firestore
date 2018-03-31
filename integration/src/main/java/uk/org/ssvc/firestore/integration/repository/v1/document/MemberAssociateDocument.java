@@ -21,19 +21,21 @@ public class MemberAssociateDocument {
 
     private String firstName;
     private String lastName;
-    private long dateOfBirth;
+    private Long dateOfBirth;
 
     public MemberAssociateDocument(MemberAssociate domain) {
         firstName = domain.getFirstName();
         lastName = domain.getLastName();
-        dateOfBirth = domain.getDateOfBirth().atStartOfDay(UTC).toEpochSecond();
+        dateOfBirth = domain.getDateOfBirth() == null ?
+            null : domain.getDateOfBirth().atStartOfDay(UTC).toEpochSecond();
     }
 
     public MemberAssociate toDomain() {
         return new MemberAssociate(
             firstName,
             lastName,
-            ZonedDateTime.ofInstant(Instant.ofEpochSecond(dateOfBirth), UTC).toLocalDate()
+            dateOfBirth == null ?
+                null : ZonedDateTime.ofInstant(Instant.ofEpochSecond(dateOfBirth), UTC).toLocalDate()
         );
     }
 
