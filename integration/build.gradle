@@ -1,7 +1,9 @@
 dependencies {
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
-    compile 'com.google.firebase:firebase-admin:5.9.0'
+    compile ('com.google.firebase:firebase-admin:5.9.0') {
+        exclude group: 'com.google.guava'
+    }
     compile 'com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-domain:master-SNAPSHOT'
     compile 'com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT'
 }
